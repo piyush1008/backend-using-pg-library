@@ -5,9 +5,12 @@ const prisma = new PrismaClient({
     log: ['info', 'query']
 })
 
+
+//this is similar to off set[skip] and limit[take]
 async function main() {
   let res = await prisma.post.findMany({
-    take: 3
+    take: 3,
+    skip:10
   })
     console.log(res);
     
